@@ -1,5 +1,7 @@
 
-# Grid.ai example of 
+# Grid.ai example of Tabformer
+
+# prerequisites
 
 - setup conda and Jupyter kernel profile 
 ```bash
@@ -10,6 +12,14 @@ pip install ipykernel # allow usage with Jupyter notebook
 python -m ipykernel install --user --name=$CONDA_NAME # show conda env in Jupyter notebook
 ipython profile create
 ```
+- aws cli
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+rm -rf aws
+```
+
 - install RAPIDS
 [cudf](https://github.com/rapidsai/cudf) cannot be install with pip
 below is from [RAPIDS Release Picker](https://rapids.ai/start.html#get-rapids)
@@ -29,28 +39,29 @@ pip install -r https://raw.githubusercontent.com/NVIDIA/fsi-samples/fraud_detect
 pip install -r https://raw.githubusercontent.com/NVIDIA/fsi-samples/fraud_detection/fraud_detection/TabFormer/GNN_XGB/requirements.txt
 ```
 
-# get the model
+- get the model
 
 ```bash
 git clone https://github.com/NVIDIA/fsi-samples
 git branch -a
 git checkout fraud_detection
 cd fraud_detection/TabFormer/GNN_XGB
+```
 
+- get the data
+
+```bash
 mkdir basedir
 cd basedir
 mkdir data
 cd data
+
 aws --no-sign-request s3 cp s3://gridai-tabformer/data.tar.gz .
 gzip -dc data.tar.gz | tar -xvf -
 ```
 
-# download data
+# Jupyter notebook
 
-```bash
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-rm -rf aws
-```
+
+
 
