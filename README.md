@@ -16,7 +16,7 @@ pip install ipykernel # allow usage with Jupyter notebook
 python -m ipykernel install --user --name=$CONDA_NAME # show conda env in Jupyter notebook
 ipython profile create
 ```
-- aws cli
+- install aws cli to /usr/local/bin/aws
 ```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
@@ -25,12 +25,12 @@ rm -rf aws
 ```
 
 - install RAPIDS
-[cudf](https://github.com/rapidsai/cudf) cannot be install with pip
-below is from [RAPIDS Release Picker](https://rapids.ai/start.html#get-rapids)
+[cudf](https://github.com/rapidsai/cudf) cannot be install with pip. Use [RAPIDS Release Picker](https://rapids.ai/start.html#get-rapids) to install.  
+- run `nvcc` `cudatooklit` to get CUDA version  
+- run `cat /etc/os-release` to get Ubuntu version
+- python minimum version is 3.8 for Grid.ai
 
-run nvcc to get cudatooklit
-python 3.8 grid lightinign 
-
+Below install is for Grid.ai session install
 ```bash
 conda create -c rapidsai -c nvidia -c conda-forge \
     rapids=22.04 python=3.8 cudatoolkit=11.0 dask-sql
