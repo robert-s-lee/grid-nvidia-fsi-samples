@@ -43,6 +43,7 @@ pip install -r https://raw.githubusercontent.com/NVIDIA/fsi-samples/fraud_detect
 
 ```bash
 git clone https://github.com/NVIDIA/fsi-samples
+cd fsi-samples
 git branch -a
 git checkout fraud_detection
 cd fraud_detection/TabFormer/GNN_XGB
