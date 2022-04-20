@@ -1,5 +1,9 @@
 
-# Grid.ai example of Tabformer
+Grid.ai example of Nvidia [fsi-samples](https://github.com/NVIDIA/fsi-samples)
+
+ Other Grid.ai NVIDIA examples:
+- Grid.ai NVIDIA [DALI](https://github.com/robert-s-lee/grid-nvidia-dali)
+- Grid.ai NVIDIA [fsi-samples](https://github.com/robert-s-lee/grid-nvidia-fsi-samples)
 
 # prerequisites
 
